@@ -7,24 +7,18 @@
 var app = app || {};
 // Avoid scope pollution 
 (function(){
-  app.HomeView = Backbone.View.extend({
+  app.AddBookView = Backbone.View.extend({
     initialize : function(){
-      this.template = _.template($('#tpl_home').html());
+      this.template = _.template($('#tpl_page1').html());
       this.$el = $('#content');
     },
-    events : {
-      'click #addBookPage' : 'addBookPage'
-    },
+    el : '#page1',
     render: function(){
-      console.log('render HOME !');
-      $('#content').html(this.template({page : 'home'}));
+      $('#content').html(this.template({page : 'page1'}));
       this.delegateEvents();
       return this;
-    },
-    addBookPage : function(evt){
-      evt.preventDefault();
-      console.log('go to addBook page');
-      return app.router.navigate('addBook', {trigger: true});
     }
   });
 })();
+
+

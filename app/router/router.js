@@ -10,16 +10,18 @@ var app = app || {};
 (function(){
   app.Router = Backbone.Router.extend({
     routes : {
-      "this-is-the-home-url" : "home",
-      "toto" : "toto"
+//      "this-is-the-home-url" : "home",
+      "" : "home",
+      "addBook" : "addBook"
     },
     home : function(){
       console.log('home route loaded !');
       var homeView = new app.HomeView();
       homeView.render();
     },
-    toto : function(){
-      console.log('toto route loaded !');
+    addBook : function(){
+      var addBookView = new app.AddBookView();
+      addBookView.render();
     }
   });
 })();
